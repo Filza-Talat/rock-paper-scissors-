@@ -1,4 +1,4 @@
- *{
+ /* *{
     margin: 0;
     padding: 0;
     text-align: center;
@@ -87,5 +87,124 @@
 
   #msg {
     font-size: 1.5rem;
+  }
+} */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+body {
+  background-color: #c6989f;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  background-color: #141f33;
+  color: white;
+  height: 4rem;
+  line-height: 4rem;
+  border-bottom: 2px solid white;
+  font-size: 2rem;
+}
+
+/* Choices */
+.choices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  gap: 2rem;
+  flex-wrap: wrap;   /* ✅ wrap images in small screens */
+}
+
+.choice {
+  height: 150px;
+  width: 150px;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.choice:hover {
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Score Board */
+.score-board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  margin-top: 2rem;
+  gap: 5rem;
+  flex-wrap: wrap;  /* ✅ stack if screen is small */
+}
+
+#user-score, #comp-score {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.msg-container {
+  margin-top: 3rem;
+}
+
+#msg {
+  background-color: #141f33;
+  color: azure;
+  font-size: 1.5rem;
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+/* 📱 Small screens (mobile) */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+    height: auto;
+    padding: 1rem;
+    line-height: normal;
+  }
+
+  .choice {
+    height: 100px;
+    width: 100px;
+  }
+
+  .score-board {
+    font-size: 1.5rem;
+    gap: 2rem;
+  }
+
+  #user-score, #comp-score {
+    font-size: 2.5rem;
+  }
+
+  #msg {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* 📱 Medium screens (tablets) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .choice {
+    height: 120px;
+    width: 120px;
   }
 }
